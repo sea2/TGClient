@@ -25,8 +25,8 @@ public class MyConstants {
         if (AppRunModel == RunModel.PRO) {// 生产地址
             return "https://app.91xcm.com/v1.0/app/";
         } else if (AppRunModel == RunModel.DEV) {//开发
-                return "http://192.168.3.171:8060/v1.0/app/";
-            //   return "http://192.168.2.61:8080/v1.0/app/";
+//                return "http://192.168.3.171:8060/v1.0/app/";
+               return "http://192.168.2.61:8080/v1.0/app/";
             //    return "http://192.168.3.35:8080/app/";
         }
         return "";

@@ -297,7 +297,8 @@ public class LoginActivity extends BaseVerifyActivity {
      * 登录
      */
     private void requestLoginData(String password) {
-
+        AccountInfoUtils.setUid(LoginActivity.this, "123456");
+        finish();
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("password", password);
         map.put("phone", phoneNum);
@@ -305,7 +306,7 @@ public class LoginActivity extends BaseVerifyActivity {
 
             @Override
             public void OnResponse(String json, boolean successorfail) {
-                AccountInfoUtils.setUid(LoginActivity.this, "123456");
+
                 if (successorfail && (!StringUtils.isEmpty(json))) {
                     try {
                         JSONObject jb = new JSONObject(json);
@@ -319,7 +320,7 @@ public class LoginActivity extends BaseVerifyActivity {
                         }
                         if (!StringUtils.isEmpty(AccountInfoUtils.getUid(LoginActivity.this))) {
                             showToast("登录成功");
-                            finish();
+
                         }
                     } catch (Exception e) {
                         e.printStackTrace();

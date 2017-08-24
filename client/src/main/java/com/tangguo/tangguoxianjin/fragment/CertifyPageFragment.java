@@ -118,10 +118,8 @@ public class CertifyPageFragment extends BaseFragment {
                     IntentUtil.startLogin((BaseActivity) getActivity(), MainActivity.class);
                     return;
                 }
-                if (getStepStatus(2)) {
                     startAc(SesameCreditActivity.class);
                     getActivity().overridePendingTransition(R.anim.activity_translate_up_into, R.anim.activity_alpha_out);
-                } else showToast("请先完成身份认证");
             }
         });
         //手机认证
@@ -132,13 +130,11 @@ public class CertifyPageFragment extends BaseFragment {
                     IntentUtil.startLogin((BaseActivity) getActivity(), MainActivity.class);
                     return;
                 }
-                if (getStepStatus(2)) {
                     Bundle mBundle = new Bundle();
                     mBundle.putInt(MyConstants.CERTIFICATION_STEP, MyConstants.CERTIFICATION_STEP_PHONE);
                     mBundle.putInt(MyConstants.CERTIFICATION_STEP_ONLY_PART, MyConstants.CERTIFICATION_STEP_ONLY_PART_PHONE);
                     mBundle.putInt(MyConstants.CERTIFICATION_SHOW_TOP, 0);
                     startAc(CertificationCenterActivity.class, mBundle);
-                }
             }
         });
         //联系人
@@ -149,13 +145,11 @@ public class CertifyPageFragment extends BaseFragment {
                     IntentUtil.startLogin((BaseActivity) getActivity(), MainActivity.class);
                     return;
                 }
-                if (getStepStatus(2)) {
                     Bundle mBundle = new Bundle();
                     mBundle.putInt(MyConstants.CERTIFICATION_STEP, MyConstants.CERTIFICATION_STEP_PHONE);
                     mBundle.putInt(MyConstants.CERTIFICATION_STEP_ONLY_PART, MyConstants.CERTIFICATION_STEP_ONLY_PART_CONTACT);
                     mBundle.putInt(MyConstants.CERTIFICATION_SHOW_TOP, 0);
                     startAc(CertificationCenterActivity.class, mBundle);
-                }
             }
         });
         //银行卡认证
@@ -166,13 +160,11 @@ public class CertifyPageFragment extends BaseFragment {
                     IntentUtil.startLogin((BaseActivity) getActivity(), MainActivity.class);
                     return;
                 }
-                if (getStepStatus(2)) {
                     Bundle mBundle = new Bundle();
                     mBundle.putInt(MyConstants.CERTIFICATION_STEP, MyConstants.CERTIFICATION_STEP_BANK);
                     //  mBundle.putInt(MyConstants.CERTIFICATION_STEP_ONLY_PART, MyConstants.CERTIFICATION_STEP_ONLY_PART_CONTACT);
                     mBundle.putInt(MyConstants.CERTIFICATION_SHOW_TOP, 0);
                     startAc(CertificationCenterActivity.class, mBundle);
-                }
             }
         });
 
