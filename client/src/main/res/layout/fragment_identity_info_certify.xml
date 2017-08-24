@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_ly_id_certify"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="个人信息"
+                android:textColor="@color/tv_color_4d4d4d"
+                android:textSize="14sp"/>
+
+            <View
+                style="@style/common_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80dp"
+                    android:text="身份证件"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="13sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:background="@drawable/shape_stroke_theme_white">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_certify_center_id_image_take_phone"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="正面"
+                                android:textColor="@color/tv_color_b3b3b3"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_id_positive"
+                            android:layout_width="@dimen/certify_id_take_photo"
+                            android:layout_height="80dp"
+                            android:layout_margin="2dp"
+                            android:scaleType="centerCrop"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/shape_stroke_theme_white">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_certify_center_id_image_take_phone"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="反面"
+                                android:textColor="@color/tv_color_b3b3b3"
+                                android:textSize="14sp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_id_reverse"
+                            android:layout_width="@dimen/certify_id_take_photo"
+                            android:layout_height="80dp"
+                            android:layout_margin="2dp"
+                            android:scaleType="centerCrop"
+                            />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                style="@style/common_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80dp"
+                    android:text="生活照"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="14sp"/>
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/shape_stroke_theme_white"
+                    >
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_certify_center_id_image_take_activity"
+                        />
+
+                    <ImageView
+                        android:id="@+id/tv_acitvity"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="2dp"
+                        android:scaleType="centerCrop"
+                        />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="实名认证成功后不能修改"/>
+
+            <View style="@style/common_line"/>
+
+            <LinearLayout style="@style/style_item_edit_layout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="真实姓名"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="14sp"/>
+
+
+                <EditText
+                    android:id="@+id/ed_name"
+                    style="@style/style_item_edit_style"
+                    android:hint="请输入真实姓名"
+                    android:maxLength="11"
+                    />
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <LinearLayout style="@style/style_item_edit_layout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="身份证号"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="14sp"/>
+
+
+                <EditText
+                    android:id="@+id/et_identity"
+                    style="@style/style_item_edit_style"
+                    android:digits="0123456789xX"
+                    android:hint="请输入身份证号"
+                    android:maxLength="18"
+                    android:text=""/>
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <LinearLayout style="@style/style_item_edit_layout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="100dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="有效期限"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/ed_phone_num_effective"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="5dp"
+                    android:drawableRight="@drawable/select_bank_down"
+                    android:hint="请输入身份证有效期限"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textColor="@color/tv_color_4d4d4d"
+                    android:textColorHint="@color/tv_color_cc"
+                    android:textSize="16sp"/>
+
+
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <Button
+                android:id="@+id/btn_confirm"
+                style="@style/btn_bottom_common"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/btn_style_theme_selector"
+                android:text="提交"
+                />
+
+            <TextView
+                android:id="@+id/tv_remark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="1dp"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    dexOptions {
+        javaMaxHeapSize "2G"
+    }
+    lintOptions {
+        abortOnError false
+    }
+    defaultConfig {
+        applicationId "com.tangguo.tangguoxianjin"
+        minSdkVersion 10
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders << [APP_NAME: "糖果"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile = file("client.jks")
+            storePassword "client"
+            keyAlias "client"
+            keyPassword "client"
+        }
+
+        release {
+            storeFile = file("client.jks")
+            storePassword "client"
+            keyAlias "client"
+            keyPassword "client"
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            //            applicationIdSuffix ".test"
+            manifestPlaceholders << [APP_NAME: "糖果-TEST"]
+            signingConfig signingConfigs.debug
+        }
+        release {
+            //动态修改BuildConfig类中属性
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+
+        内部测试_1 {
+            manifestPlaceholders << [CHANNEL_KEY: "1"]
+            manifestPlaceholders << [CHANNEL_VALUE: "测试"]
+            manifestPlaceholders << [APP_NAME: "糖果-TEST"]
+            signingConfig signingConfigs.debug
+        }
+
+        官方渠道_10000 {
+            manifestPlaceholders << [CHANNEL_KEY: "10000"]
+            manifestPlaceholders << [CHANNEL_VALUE: "官方"]
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files('libs/universal-image-loader-1.9.4.jar')
+    compile project(':PulltoRefreshLibary')
+    compile project(':okhttputils')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta3'
+    compile 'com.android.support:design:25.3.1'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.2.3'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:25.3.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    compile project(':ObservalableScrollView')
+    compile files('libs/Zxing-core-3.2.1.jar')
+}

@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/ll_phone_serciry_num"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:text="请输入运营商服务密码"
+            android:textColor="@color/tv_color_4d4d4d"
+            android:textSize="14sp"/>
+
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout style="@style/style_item_edit_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100dp"
+                android:text="服务密码"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+
+            <EditText
+                android:id="@+id/ed_phone_serciry_num"
+                style="@style/style_item_edit_style"
+                android:hint="请输入服务密码"
+                android:inputType="textPassword"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                />
+        </LinearLayout>
+
+        <View style="@style/common_line"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text="提交"
+            />
+
+        <TextView
+            android:id="@+id/tv_remark_serciry_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="1dp"
+            android:text=""
+            android:textColor="@color/tv_color_808080"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_code"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:text="请输入运营商发送的验证码"
+            android:textColor="@color/tv_color_4d4d4d"
+            android:textSize="14sp"/>
+
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_phone_serciry_code"
+            style="@style/style_item_edit_layout"
+            android:visibility="gone">
+
+
+            <EditText
+                android:id="@+id/ed_phone_serciry_code"
+                style="@style/style_item_edit_style"
+                android:hint="请输入验证码"
+                />
+
+            <Button
+                android:id="@+id/btn_get_code"
+                style="@style/style_item_verify_common"
+                />
+        </LinearLayout>
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_phone_serciry_code_image"
+            style="@style/style_item_edit_layout"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/ed_phone_serciry_code_image"
+                style="@style/style_item_edit_style"
+                android:hint="请输入图形验证码"
+                />
+
+            <ImageView
+                android:id="@+id/iv_phone_serciry_code_image"
+                android:layout_width="70dp"
+                android:layout_height="35dp"/>
+        </LinearLayout>
+
+        <View style="@style/common_line"/>
+
+        <Button
+            android:id="@+id/btn_confirm_code"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text="提交"
+            />
+
+        <TextView
+            android:id="@+id/tv_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="1dp"
+            android:text=""
+            android:textColor="@color/tv_color_808080"
+            android:textSize="14sp"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_code_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+
+        <TextView
+            android:id="@+id/tv_code_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/icon_certify_phone_end_success"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:text=""
+            android:textColor="@color/tv_color_4d4d4d"
+            android:textSize="14sp"/>
+
+
+        <Button
+            android:id="@+id/btn_confirm_code_end"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text="通讯记录授权"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_phone_contact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:text="紧急联系人"
+            android:textColor="@color/tv_color_4d4d4d"
+            android:textSize="14sp"/>
+
+
+        <View style="@style/common_line"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_relate_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press"
+            android:padding="15dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_item_leftname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxWidth="200dp"
+                android:text="亲属关系"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+
+            <TextView
+                android:id="@+id/tv_item_reletion_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_item_leftname"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_item_rightname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:drawableRight="@drawable/select_bank_down"
+                android:maxWidth="200dp"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <View style="@style/common_line"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_relate_bommot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            >
+
+            <TextView
+
+                android:id="@+id/tv_item_left2name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxWidth="200dp"
+                android:text="联系方式"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/ed_phone_raletion"
+                style="@style/style_item_edit_style"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_item_left2name"
+                android:hint="亲属关系手机号"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:minWidth="150dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_item_right2_raletion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:drawableRight="@drawable/icon_phone_certify_need_man"
+                android:maxWidth="200dp"
+                android:text=" "
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <View style="@style/common_line"/>
+
+        <View
+            style="@style/common_line"
+            android:layout_marginTop="25dp"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_social_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press"
+            android:padding="15dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_social_item_leftname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxWidth="200dp"
+                android:text="社会关系"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_item_social_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_social_item_leftname"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_social_item_rightname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:drawableRight="@drawable/select_bank_down"
+                android:maxWidth="200dp"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <View style="@style/common_line"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_social_bommot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/bg_common_press"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_social_item_left2name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxWidth="200dp"
+                android:text="联系方式"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/ed_phone_social"
+                style="@style/style_item_edit_style"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/tv_social_item_left2name"
+                android:hint="社会关系手机号"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_social_item_right2name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:drawableRight="@drawable/icon_phone_certify_need_man"
+                android:maxWidth="200dp"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <View style="@style/common_line"/>
+
+        <Button
+            android:id="@+id/btn_contact_submit"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text="下一步"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

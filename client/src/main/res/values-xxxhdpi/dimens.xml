@@ -1,0 +1,12 @@
+<resources>
+
+    <dimen name="common_dialog_button_padding">15dp</dimen>
+
+
+    <dimen name="add_lines_top_lou_hight">163dp</dimen>
+
+
+
+    <integer name="title_em_size">14</integer>
+    <integer name="title_em_size_show_close">11</integer>
+</resources>

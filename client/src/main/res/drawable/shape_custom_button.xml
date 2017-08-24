@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#fff">
+    </solid>
+    <corners android:radius="20dp"/>
+
+    <!-- 描边 -->
+    <stroke
+        android:width="0.5dp"
+        android:color="@color/stand_common"
+        />
+    <!-- 间隔 -->
+    <padding
+        android:bottom="2dp"
+        android:left="4dp"
+        android:right="2dp"
+        android:top="2dp"/><!-- 各方向的间隔 -->
+</shape>

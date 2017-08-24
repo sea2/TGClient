@@ -1,0 +1,15 @@
+<resources>
+
+    <dimen name="common_dialog_button_padding">15dp</dimen>
+
+
+    <dimen name="add_lines_top_lou_hight">145dp</dimen>
+    <dimen name="certify_id_take_photo">90dp</dimen>
+
+    <dimen name="certify_home_top_height">180dp</dimen>
+    <dimen name="certify_home_top_line_margin_height">60dp</dimen>
+
+
+    <integer name="title_em_size">10</integer>
+    <integer name="title_em_size_show_close">7</integer>
+</resources>

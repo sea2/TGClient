@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/certify_home_top_height"
+            android:background="@drawable/bg_addlines_top">
+
+            <RelativeLayout
+                android:id="@+id/rl_add_lines_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_theme"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                >
+
+                <TextView
+                    style="@style/text_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="认证"/>
+
+                <ImageButton
+                    android:id="@+id/tv_info_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/transparent_bg_selector"
+                    android:padding="8dp"
+                    android:src="@drawable/loan_customer_service_button"
+                    android:visibility="gone"/>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_line_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/certify_home_top_line_margin_height"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_lines_new_sign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"/>
+
+                <com.tangguo.tangguoxianjin.view.AnimationNumberView
+                    android:id="@+id/tv_lines_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="65sp"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_line_money"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="1dp"
+                android:text="当前可借款额度"
+                android:textColor="@color/bg_common"
+                android:textSize="12sp"/>
+
+
+        </RelativeLayout>
+
+        <View
+            style="@style/common_line"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="认证任务"
+            android:textColor="@color/tv_color_4d4d4d"
+            android:textSize="12sp"/>
+
+        <View
+            style="@style/common_line"/>
+
+        <LinearLayout
+            android:id="@+id/ll_certify_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_common_press"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+
+            >
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/icon_certify_info1"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="身份认证"/>
+
+            <TextView
+                android:id="@+id/tv_cerfity_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/common_goto"/>
+        </LinearLayout>
+
+        <View
+            style="@style/common_line"/>
+
+        <View
+            style="@style/common_line"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_certify_sesame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_common_press"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+
+            >
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/icon_certify_info5"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="芝麻信用"/>
+
+            <TextView
+                android:id="@+id/tv_cerfity_sesame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/common_goto"/>
+        </LinearLayout>
+
+        <View
+            style="@style/common_line"/>
+
+        <View
+            style="@style/common_line"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_certify_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_common_press"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+
+            >
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/icon_certify_info2"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="手机认证"/>
+
+            <TextView
+                android:id="@+id/tv_cerfity_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/common_goto"/>
+        </LinearLayout>
+
+        <View
+            style="@style/common_line"/>
+
+        <View
+            style="@style/common_line"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_certify_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_common_press"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+
+            >
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/icon_certify_info3"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="紧急联系人"/>
+
+            <TextView
+                android:id="@+id/tv_cerfity_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/common_goto"/>
+        </LinearLayout>
+
+        <View
+            style="@style/common_line"/>
+
+        <View
+            style="@style/common_line"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/ll_certify_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_common_press"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+
+            >
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/icon_certify_info4"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="银行卡认证"/>
+
+            <TextView
+                android:id="@+id/tv_cerfity_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/common_goto"/>
+        </LinearLayout>
+
+        <View
+            style="@style/common_line"/>
+
+
+    </LinearLayout>
+</ScrollView>

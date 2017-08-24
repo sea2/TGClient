@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_dialog_colose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <View
+            android:layout_centerHorizontal="true"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"/>
+        <ImageButton
+            android:id="@+id/ib_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/btn_close_zhima_dialog"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_dialog_colose"
+        android:background="@drawable/shape_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_dialog_zhima_xinyong"
+            android:drawablePadding="5dp"
+            android:padding="15dp"
+            android:text="芝麻信用"
+            android:textSize="30sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/color_66c2cb"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="您点击“同意授权按钮”接受如下内容："
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:padding="10dp"
+            android:text="芝麻信用\n芝麻信用\n芝麻信用\n芝麻信用\n芝麻信用\n芝麻信用\n芝麻信用"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/btn_confirm_ok"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_style_custom1_selector"
+            android:text="同意授权"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="芝麻信用~版权所有"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

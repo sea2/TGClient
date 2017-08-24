@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 轮播图-->
+    <declare-styleable name="Banner">
+        <attr name="default_image" format="reference"/>
+        <attr name="delay_time" format="dimension"/>
+        <attr name="is_auto_play" format="boolean"/>
+        <attr name="indicator_width" format="dimension"/>
+        <attr name="indicator_height" format="dimension"/>
+        <attr name="indicator_margin" format="dimension"/>
+        <attr name="indicator_drawable_selected" format="reference"/>
+        <attr name="indicator_drawable_unselected" format="reference"/>
+    </declare-styleable>
+
+
+    <!--  自定义圆角按钮-->
+    <declare-styleable name="CustomImageButton">
+        <attr name="titleText" format="string"/>
+        <attr name="titleTextSize" format="dimension"/>
+        <attr name="titleTextColor" format="color"/>
+        <attr name="radiusBg" format="dimension"/>
+        <attr name="imageTextSpacing" format="dimension"/>
+        <attr name="image" format="reference"/>
+        <attr name="imageScaleType">
+            <enum name="fillXY" value="0"/>
+            <enum name="center" value="1"/>
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="EditTextWithDel">
+        <attr name="delsrc" format="reference"/>
+    </declare-styleable>
+
+
+    <!--进度-->
+    <declare-styleable name="ColorArcProgressBar">
+        <attr name="back_color" format="color"/>
+        <attr name="front_color1" format="color"/>
+        <attr name="front_color2" format="color"/>
+        <attr name="front_color3" format="color"/>
+        <attr name="back_width" format="dimension"/>
+        <attr name="front_width" format="dimension"/>
+        <attr name="is_need_title" format="boolean"/>
+        <attr name="is_need_content" format="boolean"/>
+        <attr name="is_need_unit" format="boolean"/>
+        <attr name="is_need_dial" format="boolean"/>
+        <attr name="string_title" format="string"/>
+        <attr name="string_unit" format="string"/>
+        <attr name="total_engle" format="integer"/>
+        <attr name="current_value" format="float"/>
+        <attr name="max_value" format="float"/>
+
+    </declare-styleable>
+    <!--进度-->
+    <declare-styleable name="CustomProgressBar">
+        <attr name="custom_progress_back_color" format="color"/>
+        <attr name="custom_progress_front_color1" format="color"/>
+        <attr name="custom_progress_front_color2" format="color"/>
+        <attr name="custom_progress_front_color3" format="color"/>
+        <attr name="custom_progress_back_width" format="dimension"/>
+        <attr name="custom_progress_front_width" format="dimension"/>
+    </declare-styleable>
+
+
+    <!--圆形图片-->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension"/>
+        <attr name="border_color" format="color"/>
+        <attr name="inner_border_width" format="dimension"/>
+    </declare-styleable>
+</resources>

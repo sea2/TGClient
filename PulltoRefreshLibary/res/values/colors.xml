@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tv_color_33">#333333</color>
+    <color name="tv_color_66">#666666</color>
+    <color name="tv_color_99">#999999</color>
+    <color name="tv_color_cc">#cccccc</color>
+    <color name="tv_color_80">#808080</color>
+    <!--小财迷 start-->
+    <color name="home_chose_bg">#f6f9ff</color>
+    <color name="color_B3B3B3">#B3B3B3</color>
+</resources>

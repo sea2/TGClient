@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.tangguo.tangguoxianjin.activity.BorrowMoneyEndActivity">
+
+
+    <View
+        style="@style/common_line"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="25dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_top_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+
+            <ProgressBar
+                android:id="@+id/id_loading_progressbar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:indeterminateDrawable="@drawable/progress_loading"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_borrow_end_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/color_66c2cb"
+                android:textSize="30sp"/>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_borrow_end_second_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_top_progress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/icon_repay_end_success"
+            android:textColor="@color/color_theme"
+            android:textSize="18sp"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_borrow_end_second_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_borrow_end_second_success"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/tv_color_4d4d4d"
+            android:textSize="13sp"
+            />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/common_line"/>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        style="@style/btn_bottom_common"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/btn_style_theme_selector"
+        android:text=""
+        />
+</LinearLayout>

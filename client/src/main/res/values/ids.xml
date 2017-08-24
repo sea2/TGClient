@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="fgelv_tag_changed_visibility" type="id"/>
+    <item name="team_singlechat_id_send" type="id"/>
+    <item name="team_singlechat_id_close" type="id"/>
+
+</resources>

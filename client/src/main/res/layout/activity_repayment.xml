@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/id_swipe_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_top_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    >
+
+                    <com.tangguo.tangguoxianjin.view.progress.CustomProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        app:custom_progress_back_color="@color/bg_line"
+                        app:custom_progress_back_width="6dp"
+                        app:custom_progress_front_color1="@color/color_66c2cb"
+                        app:custom_progress_front_color2="@color/color_theme"
+                        app:custom_progress_front_width="4dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="70dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_line_day_remark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/tv_color_808080"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_line_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:textColor="@color/tv_color_4d4d4d"
+                            android:textSize="25sp"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_add_remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_top_progress"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="1dp"
+                    android:text="按时还款信用增值"
+                    android:textColor="@color/color_theme"
+                    android:textSize="14sp"/>
+
+                <View style="@style/common_line"/>
+
+                <View
+                    style="@style/common_line"
+                    android:layout_marginTop="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_borrow_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="14sp"/>
+
+                    <View style="@style/common_line"/>
+
+                    <TextView
+                        android:id="@+id/tv_pay_money_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="14sp"/>
+
+                    <View style="@style/common_line"/>
+
+                    <TextView
+                        android:id="@+id/tv_return_money_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="14sp"/>
+
+                    <View style="@style/common_line"/>
+
+                    <TextView
+                        android:id="@+id/tv_return_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="14sp"/>
+
+
+                </LinearLayout>
+
+                <View style="@style/common_line"/>
+
+                <Button
+                    android:id="@+id/btn_return_money"
+                    style="@style/btn_bottom_common"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/btn_style_theme_selector"
+                    android:text="立即还款"
+                    />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_repay_step_way"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="请确保您的余额充足，扣款失败将影响你的个人信用"
+            android:textColor="@color/tv_color_4d4d4d"
+            android:textSize="13sp"/>
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100dp"
+                android:padding="15dp"
+                android:text="还款金额"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_repay_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100dp"
+                android:padding="15dp"
+                android:text="支付方式"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_repay_money_way"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/select_bank_down"
+                android:hint="请选择支付方式"
+                android:minWidth="200dp"
+                android:padding="15dp"
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View style="@style/common_line"/>
+
+        <Button
+            android:id="@+id/btn_repay_money"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text="立即还款"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_repay_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:drawableTop="@drawable/icon_repay_end_success"
+            android:text="恭喜您，还款提交成功！"
+            android:textColor="@color/color_theme"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="系统将进行扣款，并通知您扣款结果"
+            android:textColor="@color/tv_color_808080"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btn_repay_end"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text="确定"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_repay_nothing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:drawablePadding="20dp"
+            android:drawableTop="@drawable/nothing_icon"
+            android:gravity="center"
+            android:text="您暂无还款项！"
+            android:textColor="@color/color_theme"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</RelativeLayout>
+

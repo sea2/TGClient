@@ -1,0 +1,157 @@
+<resources>
+    <!--app主题-->
+    <style name="BaseAppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/bg_common</item>
+        <item name="android:colorBackground">@color/bg_common</item>
+        <item name="android:textColor">@color/tv_color_808080</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+    </style>
+
+    <!--dialog样式-->
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--  背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--浮现在activity之上背景模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+
+    <style name="commonDialog" parent="@style/dialog">
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="main_footer_bar_radio" parent="footer_bar">
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textColor">@drawable/footer_text_color</item>
+    </style>
+
+    <style name="footer_bar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <style name="text_title" parent="@style/singleLine">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="singleLine">
+        <item name="android:singleLine">true</item>
+    </style>
+
+
+    <!-- 通用按钮的style -->
+    <style name="btn_bottom_common" parent="@style/btn_bottom_common_base">
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+
+    </style>
+
+    <style name="btn_bottom_common_base">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="text_4d4d4d_14" parent="@style/singleLine">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/tv_color_4d4d4d</item>
+    </style>
+
+    <style name="text_808080_14" parent="@style/singleLine">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/tv_color_808080</item>
+    </style>
+
+    <style name="text_b3b3b3_14" parent="@style/singleLine">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/tv_color_b3b3b3</item>
+    </style>
+
+    <!-- 金额选择的单选style -->
+    <style name="common_but_radio">
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/radio_common_selector_color</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <!-- 分割线的style -->
+    <style name="common_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/bg_line</item>
+    </style>
+
+    <!-- edittext父容器的style -->
+    <style name="style_item_edit_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- edittext本身的样式 -->
+    <style name="style_item_edit_style" parent="@style/singleLine">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/tv_color_4d4d4d</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColorHint">@color/tv_color_cc</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:gravity">left</item>
+    </style>
+
+    <!-- 侧验证码按钮样式 -->
+    <style name="style_item_verify_common" parent="@style/singleLine">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/selector_common_code_state</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:text">获取验证码</item>
+        <item name="android:background">@drawable/selector_common_code_state</item>
+
+    </style>
+</resources>

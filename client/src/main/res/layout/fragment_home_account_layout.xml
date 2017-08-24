@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/fragment_account_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/certify_home_top_height"
+                android:background="@drawable/bg_addlines_top">
+
+                <RelativeLayout
+                    android:id="@+id/rl_account_page_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_theme"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    >
+
+
+                    <ImageButton
+                        android:id="@+id/tv_info_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/transparent_bg_selector"
+                        android:padding="8dp"
+                        android:src="@drawable/loan_customer_service_button"
+                        android:visibility="gone"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ll_account_top_image"
+                    android:layout_width="90dp"
+                    android:layout_height="76dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/certify_home_top_line_margin_height"
+                    android:orientation="horizontal">
+
+                    <com.tangguo.tangguoxianjin.view.CircleImageView
+                        android:id="@+id/tv_account_image"
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/icon_default_heart_image"
+                        app:border_color="@color/white"
+                        app:border_width="0.5dp"
+                        app:inner_border_width="0.5dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_certify_complete_flag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/account_not_certified_icon"/>
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_account_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_account_top_image"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textColor="@color/bg_common"
+                    android:textSize="14sp"/>
+
+
+            </RelativeLayout>
+
+            <View
+                style="@style/common_line"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_borrow_progress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_common_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_account_certify_borrow_progress"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="借款进度"
+                        android:textColor="@color/tv_color_4d4d4d"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="35dp"
+                    android:background="@color/bg_line"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_borrow_help"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_common_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/icon_account_certify_borrow_helper"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:text="借款攻略"
+                        android:textColor="@color/tv_color_4d4d4d"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+
+            <View
+                style="@style/common_line"
+                android:layout_marginTop="15dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_account_borrow_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_common_press"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/icon_account_list_info1"/>
+
+                <TextView
+                    style="@style/text_808080_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="借款记录"/>
+
+                <TextView
+                    android:id="@+id/tv_account_borrow_record"
+
+                    style="@style/text_808080_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/common_goto"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/common_line"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_account_share_friend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_common_press"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/icon_account_list_info2"/>
+
+                <TextView
+                    style="@style/text_808080_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="邀请好友"/>
+
+                <TextView
+                    android:id="@+id/tv_account_share_friend"
+                    style="@style/text_b3b3b3_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/common_goto"
+                    android:text="@string/account_wait"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/common_line"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_account_cash_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_common_press"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/icon_account_list_info3"/>
+
+                <TextView
+                    style="@style/text_808080_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="代金券"/>
+
+                <TextView
+                    android:id="@+id/tv_account_cash_coupon"
+                    style="@style/text_b3b3b3_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/common_goto"
+                    android:text="@string/account_wait"/>
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+
+            <View
+                style="@style/common_line"
+                android:layout_marginTop="15dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_account_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_common_press"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/icon_account_list_info4"/>
+
+                <TextView
+                    style="@style/text_808080_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="安全设置"/>
+
+                <TextView
+                    android:id="@+id/tv_account_tetting"
+
+                    style="@style/text_808080_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/common_goto"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/common_line"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_account_help_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_common_press"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/icon_account_list_info5"/>
+
+                <TextView
+                    style="@style/text_808080_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="帮助中心"/>
+
+                <TextView
+                    android:id="@+id/tv_account_help_center"
+                    style="@style/text_b3b3b3_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/common_goto"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    style="@style/common_line"
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_account_servicer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_common_press"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/icon_account_list_info6"/>
+
+                <TextView
+                    style="@style/text_808080_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text="客服电话"/>
+
+                <TextView
+                    android:id="@+id/tv_account_servicer"
+                    style="@style/text_b3b3b3_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/common_goto"
+                    />
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+
+            <TextView
+                android:id="@+id/tv_app_version"
+                style="@style/text_808080_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="20dp"/>
+
+        </LinearLayout>
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+    <TextView
+        android:id="@+id/tv_account_title"
+        style="@style/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/main_navigation_user"/>
+
+
+</RelativeLayout>

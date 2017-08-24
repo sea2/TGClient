@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <ScrollView
+        android:id="@+id/sv_borrow_money_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/text_4d4d4d_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="借款金额"/>
+
+                <com.tangguo.tangguoxianjin.view.CustomImageButton
+                    android:id="@+id/btn_add_lines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:background="@drawable/transparent_bg_selector"
+                    android:padding="2dp"
+                    android:visibility="gone"
+                    app:image="@drawable/loan_hoist_add_icon"
+                    app:imageTextSpacing="1dp"
+                    app:titleText="我要提额"
+                    app:titleTextColor="#ef7030"
+                    app:titleTextSize="12sp"
+                    />
+
+
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <RadioGroup
+                android:id="@+id/rg_money"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <RadioButton
+                    android:id="@+id/rb_money_one"
+                    style="@style/common_but_radio"
+                    android:background="@drawable/radio_common_selector"
+                    android:checked="true"
+                    android:text="500元"/>
+
+                <RadioButton
+                    android:id="@+id/rb_money_two"
+                    style="@style/common_but_radio"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/radio_common_selector"
+                    android:text="1000元"/>
+
+                <RadioButton
+                    android:id="@+id/rb_money_three"
+                    style="@style/common_but_radio"
+                    android:background="@drawable/radio_common_selector"
+                    android:text="500元"
+                    android:visibility="invisible"/>
+
+
+            </RadioGroup>
+
+            <View style="@style/common_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/text_4d4d4d_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="借款期限"/>
+
+
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <RadioGroup
+                android:id="@+id/rg_time_limit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <RadioButton
+                    android:id="@+id/rb_time_limit_one"
+                    style="@style/common_but_radio"
+                    android:background="@drawable/radio_common_selector"
+                    android:checked="true"
+                    android:text="7天"/>
+
+                <RadioButton
+                    android:id="@+id/rb_time_limit_two"
+                    style="@style/common_but_radio"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/radio_common_selector"
+                    android:text="14天"/>
+
+                <RadioButton
+                    android:id="@+id/rb_time_limit_three"
+                    style="@style/common_but_radio"
+                    android:background="@drawable/radio_common_selector"
+                    android:text="28天"
+                    />
+            </RadioGroup>
+
+            <View style="@style/common_line"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="费用"/>
+
+            <View style="@style/common_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/tv_color_b3b3b3"
+                    android:textSize="16sp"/>
+
+                <com.tangguo.tangguoxianjin.view.CustomImageButton
+                    android:id="@+id/btn_cost_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/transparent_bg_selector"
+                    android:padding="1dp"
+                    android:visibility="gone"
+                    app:imageTextSpacing="1dp"
+                    app:titleText="费用明细"
+                    app:titleTextColor="#0076ff"
+                    app:titleTextSize="12sp"
+                    />
+
+
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <TextView
+                style="@style/text_4d4d4d_14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="实际到账金额"/>
+
+            <View style="@style/common_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_come_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/tv_color_b3b3b3"
+                    android:textSize="16sp"/>
+
+
+            </LinearLayout>
+
+            <View style="@style/common_line"/>
+
+            <LinearLayout
+                android:id="@+id/ll_phone_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="1dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/text_4d4d4d_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="10dp"
+
+                    android:text="快速注册"/>
+
+                <View style="@style/common_line"/>
+
+                <LinearLayout style="@style/style_item_edit_layout">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="100dp"
+                        android:text="手机号码"
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="14sp"/>
+
+
+                    <EditText
+                        android:id="@+id/ed_phone_num"
+                        style="@style/style_item_edit_style"
+                        android:digits="0123456789"
+                        android:hint="请输入手机号码"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        />
+                </LinearLayout>
+
+                <View style="@style/common_line"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="100dp"
+                        android:text="验证码"
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="14sp"/>
+
+                    <EditText
+                        android:id="@+id/et_security_code"
+                        style="@style/style_item_edit_style"
+                        android:hint="请输入验证码"
+                        android:maxLength="6"
+                        android:text=""/>
+
+                    <Button
+                        android:id="@+id/btn_get_code"
+                        style="@style/style_item_verify_common"
+                        />
+                </LinearLayout>
+
+                <View style="@style/common_line"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout
+            android:id="@+id/protocol_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            >
+
+            <CheckBox
+                android:id="@+id/cb_protocol"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/default_checkbox"
+                android:button="@null"
+                android:checked="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="我已阅读并同意"
+                android:visibility="gone"
+                android:textColor="@color/tv_color_b3b3b3"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tv_protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:padding="3dp"
+                android:text=""
+                android:textColor="@color/tv_color_b3b3b3"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text=""
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

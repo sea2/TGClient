@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+    >
+
+    <View
+        style="@style/common_line"
+        android:layout_marginTop="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.tangguo.tangguoxianjin.view.CircleImageView
+                android:id="@+id/iv_dot"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_centerHorizontal="true"
+                android:src="@color/red"
+                />
+
+            <TextView
+                android:id="@+id/tv_borrow_record_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:background="@drawable/transparent_bg_selector"
+                android:id="@+id/tv_borrow_record_id_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="借款协议>"
+                android:textColor="@color/color_theme"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="借款金额"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_borrow_record_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:textColor="@color/tv_color_b3b3b3"
+                    android:textSize="13sp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/bg_line"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="借款期限"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_borrow_record_time_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:textColor="@color/tv_color_b3b3b3"
+                    android:textSize="13sp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/bg_line"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="状态"
+                    android:textColor="@color/tv_color_808080"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_borrow_record_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text=""
+                    android:textColor="@color/tv_color_b3b3b3"
+                    android:textSize="13sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View style="@style/common_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_borrow_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text=""
+                android:textColor="@color/tv_color_808080"
+                android:textSize="13sp"/>
+
+            <com.tangguo.tangguoxianjin.view.CustomImageButton
+                android:id="@+id/btn_repay"
+                android:layout_width="90dp"
+                android:layout_height="28dp"
+                android:background="@drawable/transparent_bg_selector"
+                app:imageTextSpacing="1dp"
+                app:radiusBg="15dp"
+                app:titleText="立即还款"
+                app:titleTextColor="@color/color_theme"
+                app:titleTextSize="14sp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/common_line"/>
+</LinearLayout>

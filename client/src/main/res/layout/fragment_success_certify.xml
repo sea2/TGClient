@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_code_end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_common"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/tv_code_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:drawablePadding="15dp"
+            android:drawableTop="@drawable/img_certify_success"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
+            android:text="恭喜您，认证完成！"
+            android:textColor="@color/color_theme"
+            android:textSize="18sp"/>
+
+
+        <Button
+            android:id="@+id/btn_confirm_code_end"
+            style="@style/btn_bottom_common"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_style_theme_selector"
+            android:text="申请借款"
+            />
+
+
+    </LinearLayout>
+</LinearLayout>

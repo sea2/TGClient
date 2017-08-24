@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_ly_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+                <com.tangguo.tangguoxianjin.view.banner.Banner
+                    android:id="@+id/banner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:background="@drawable/home_default_banner"
+                    app:default_image="@drawable/home_default_banner"
+                    app:indicator_drawable_selected="@drawable/selected_radius"
+                    app:indicator_height="6dp"
+                    app:indicator_width="6dp"/>
+
+
+                <View
+                    android:id="@+id/fragment_home_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/banner1"
+                    android:background="@color/bg_line"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_broad_cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_home_line1"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:visibility="gone"
+                    >
+
+                    <ImageView
+                        android:id="@+id/tv_broadcast"
+                        android:layout_width="20dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/broadcastanimation"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_broad_info"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="14sp"/>
+
+                    <ImageView
+                        android:id="@+id/tv_broadcast_close"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="5dp"
+                        android:src="@drawable/icon_broadcast"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/fragment_home_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/ll_broad_cast"
+                    android:background="@color/bg_line"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_body_left_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_home_line2"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_left_loan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/color_theme"
+                        android:gravity="center"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/home_loan_button"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_vertical"
+                            android:text="借款"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_right_repayment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="0.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/color_theme"
+                        android:gravity="center"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/home_repayment_button"
+                            android:drawablePadding="10dp"
+                            android:gravity="center_vertical"
+                            android:text="还款"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_my_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_body_left_right"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    >
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/bg_line"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:text="可用授信额度(元)"
+                            android:textColor="@color/tv_color_4d4d4d"
+                            android:textSize="18sp"/>
+
+                        <com.tangguo.tangguoxianjin.view.CustomImageButton
+                            android:id="@+id/btn_add_lines"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:background="@drawable/transparent_bg_selector"
+                            android:visibility="gone"
+                            app:image="@drawable/home_hoist_logo"
+                            app:imageTextSpacing="1dp"
+                            app:radiusBg="15dp"
+                            app:titleText="提升额度"
+                            app:titleTextColor="#ffaf30"
+                            app:titleTextSize="14sp"
+                            />
+                    </LinearLayout>
+
+
+                    <com.tangguo.tangguoxianjin.view.AnimationNumberView
+                        android:id="@+id/tv_home_lines_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text=""
+                        android:textColor="@color/stand_common"
+                        android:textSize="30sp"/>
+
+                    <View
+                        android:id="@+id/view_dash_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_dash_line"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_useful_record"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_common_press"
+                        android:clickable="true"
+                        android:padding="10dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_item_left_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="当前待还"
+                            android:textColor="@color/tv_color_808080"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_item_rightname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:drawablePadding="10dp"
+                            android:drawableRight="@drawable/common_goto"
+                            android:maxWidth="200dp"
+                            android:text=""/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/fragment_home_line4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/ll_my_info"
+                    android:background="@color/bg_line"
+                    />
+
+                <View
+                    android:id="@+id/fragment_home_line5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_below="@+id/fragment_home_line4"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/bg_line"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_home_line5"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="帮助中心"
+                        android:textColor="@color/tv_color_808080"
+                        android:textSize="20sp"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:id="@+id/tv_help_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/home_help_default"/>
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <ImageView
+        android:id="@+id/tv_home_information"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/home_message_icon_bg"
+        android:src="@drawable/home_message_icon"/>
+</RelativeLayout>
