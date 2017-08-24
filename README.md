@@ -12,6 +12,6 @@
 4，登录注册验证码发送
 5，自定义相机
 https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824102255.png
-![Image text](https://raw.github.com/yourName/repositpry/master/yourprojectName/img-folder/test.jpg)
+![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824102255.png)
 
 
