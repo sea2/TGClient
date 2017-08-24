@@ -12,12 +12,9 @@
 4，登录注册验证码发送
 5，自定义相机
 https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824102255.png
-![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824102255.png)
-![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824104826.png)
-![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105046.png)
-![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105256.png)
-![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105307.png)
-![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105314.png)
+![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824102255.png)![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824104826.png)
+![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105046.png)![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105256.png)
+![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105307.png)![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105314.png)
 ![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105405.png)
 ![Image text](https://github.com/sea2/TGClient/blob/master/raw/QQ%E6%88%AA%E5%9B%BE20170824105314.png)
 
