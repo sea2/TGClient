@@ -302,8 +302,10 @@ public class LoginActivity extends BaseVerifyActivity {
         map.put("password", password);
         map.put("phone", phoneNum);
         requestNetData(UrlConstans.ACCOUNT_LOGIN, map, true, MyConstants.HttpMethod.HTTP_POST, UrlConstans.ACCOUNT_LOGIN_CODE, new ResponseNewListener() {
+
             @Override
             public void OnResponse(String json, boolean successorfail) {
+                AccountInfoUtils.setUid(LoginActivity.this, "123456");
                 if (successorfail && (!StringUtils.isEmpty(json))) {
                     try {
                         JSONObject jb = new JSONObject(json);
