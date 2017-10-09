@@ -20,6 +20,7 @@ import android.view.WindowManager;
 
 import com.tangguo.tangguoxianjin.R;
 import com.tangguo.tangguoxianjin.config.MyConstants;
+import com.tangguo.tangguoxianjin.net.HttpErrorInfo;
 import com.tangguo.tangguoxianjin.net.RequestManager;
 import com.tangguo.tangguoxianjin.net.ResponseListener;
 import com.tangguo.tangguoxianjin.net.ResponseNewListener;
@@ -420,6 +421,73 @@ public abstract class BaseActivity extends FragmentActivity {
             }
         });
     }
+
+
+
+    public void requestNetData(String url, Map<String, String> hasMap, final boolean showDialog, MyConstants.HttpMethod method, final int resquestCode) {
+        if (requestList != null) requestList.add(resquestCode);
+        if (showDialog) showProgressDialog();
+        if (mRequestManager == null) mRequestManager = new RequestManager();
+        mRequestManager.getServerData(url, hasMap, method, resquestCode, new ResponseListener() {
+            @Override
+            public void OnSuccess(JSONObject json) {
+                String jsonStr = "";
+                String resultStr = "";//为空时 code不等于200或者不存在result
+
+                if (json != null) jsonStr = json.toString();
+                LogManager.d(jsonStr);
+                try {
+                    JSONObject mJSONObject = new JSONObject(jsonStr);
+                    if (mJSONObject.has("code")) {
+                        if (StringUtils.isEquals(mJSONObject.getString("code"), "200")) {
+                            onResponsSuccess(resquestCode, mJSONObject.getString("result"));
+                        } else {
+                            HttpErrorInfo errorInfo = new HttpErrorInfo();
+                            errorInfo.setCode(mJSONObject.getString("code"));
+                            errorInfo.setMsg(mJSONObject.getString("message"));
+                            onResponsFailed(resquestCode, errorInfo);
+                        }
+                    } else {
+                        onResponsError(resquestCode, "不存在关键字code");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    onResponsError(resquestCode, "json捕获异常");
+                } finally {
+                    if (showDialog) dismissProgressDialog();
+                    if (requestList != null) requestList.remove(resquestCode);
+                }
+
+            }
+
+            @Override
+            public void OnError(String error) {
+                onResponsError(resquestCode, error);
+                if (!StringUtils.isEmpty(error)) showToast(error);
+                if (showDialog) dismissProgressDialog();
+                if (requestList != null) requestList.remove(resquestCode);
+            }
+        });
+    }
+
+
+    // 网络请求数据返回
+    public void onResponsSuccess(int requestCode, String data) {
+    }
+
+    // 返回值code不为100
+    public void onResponsFailed(int requestCode, HttpErrorInfo errorInfo) {
+        if (errorInfo != null && StringUtils.isNotEmpty(errorInfo.getMsg()))
+            showToast(errorInfo.getMsg());
+    }
+
+    // 网络请求失败、数据解析失败、数据sign检查失败、
+    public void onResponsError(int requestCode, String msg) {
+
+    }
+
+
+
 
     /**
      * 取消网络请求
