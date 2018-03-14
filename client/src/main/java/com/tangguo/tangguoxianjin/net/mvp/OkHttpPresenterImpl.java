@@ -53,10 +53,12 @@ public class OkHttpPresenterImpl implements OkHttpPresenter, OkHttpListener {
     @Override
     public void OnSuccess(int requestCode, JSONObject json) {
         listOkHttp.remove(requestCode);
+        listener.OnSuccess(requestCode,json);
     }
 
     @Override
     public void OnError(int requestCode, String json) {
         listOkHttp.remove(requestCode);
+        listener.OnError(requestCode,json);
     }
 }
