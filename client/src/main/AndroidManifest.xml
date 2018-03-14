@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.tangguo.tangguoxianjin">
 
     <!-- 访问网络状态的权限 -->
@@ -36,10 +37,8 @@
     <application
         android:name=".common.MyApplication"
         android:allowBackup="false"
-        android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
         android:label="${APP_NAME}"
-        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="CHANNEL_NAME"
@@ -61,6 +60,7 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
+            android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
         </activity>
@@ -82,7 +82,10 @@
         <activity android:name=".activity.CertificationEndActivity"/>
         <activity android:name=".activity.SesameCreditActivity"/>
         <activity android:name=".activity.BorrowMoneyEndActivity"/>
-        <activity android:name=".activity.WebActivity"/>
+        <activity
+            android:name=".activity.WebActivity"
+            android:hardwareAccelerated="true"
+             />
         <activity
             android:name=".activity.ResetLoginPasswordActivity"
             android:windowSoftInputMode="adjustPan|stateVisible"/>

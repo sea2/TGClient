@@ -1,5 +1,6 @@
 package com.tangguo.tangguoxianjin.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -67,6 +68,7 @@ public class WebActivity extends BaseActivity {
     }
 
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void initViews() {
         networkProgressBar = (ProgressBar) findViewById(R.id.myProgressBar);
         webView = (WebView) findViewById(wv_load);

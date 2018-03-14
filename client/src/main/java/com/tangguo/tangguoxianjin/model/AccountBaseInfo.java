@@ -16,9 +16,17 @@ public class AccountBaseInfo {
     private String balance;
     private String borrowMoney;
     private String phone;
+    private BaseData<Integer> mBaseData=new BaseData<Integer>();
 
     public String getBalance() {
+
+      int tyei=  mBaseData.getData()+1;
+
         return balance;
+
+
+
+
     }
 
     public void setBalance(String balance) {

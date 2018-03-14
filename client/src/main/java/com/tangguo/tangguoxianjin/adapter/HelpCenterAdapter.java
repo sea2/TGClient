@@ -55,7 +55,6 @@ public class HelpCenterAdapter extends BaseExpandableListAdapter {
         convertView.setTag(R.id.team_singlechat_id_send, groupPosition);
         convertView.setTag(R.id.team_singlechat_id_close, -1);
         final TextView text = (TextView) convertView.findViewById(R.id.help_center__list_group_item_text);
-
         HelpCenterInfo.QaListBeanX groupItem = groupList.get(groupPosition);
         if (groupItem != null) {
             text.setText(groupItem.getTitle());

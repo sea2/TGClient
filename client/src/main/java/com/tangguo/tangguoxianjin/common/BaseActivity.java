@@ -21,6 +21,8 @@ import android.view.WindowManager;
 import com.tangguo.tangguoxianjin.R;
 import com.tangguo.tangguoxianjin.config.MyConstants;
 import com.tangguo.tangguoxianjin.net.HttpErrorInfo;
+import com.tangguo.tangguoxianjin.net.OkHttpListener;
+import com.tangguo.tangguoxianjin.net.OkHttpManager;
 import com.tangguo.tangguoxianjin.net.RequestManager;
 import com.tangguo.tangguoxianjin.net.ResponseListener;
 import com.tangguo.tangguoxianjin.net.ResponseNewListener;
@@ -42,7 +44,7 @@ import java.util.Map;
  * Created by lhy on 2017/3/22.
  */
 
-public abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends FragmentActivity implements OkHttpListener {
     protected String TAG = "";
     private SystemBarTintManager tintManager = null;
     protected boolean isUserDefinedColorForStatusBar = true;//是否采用自定义的颜色设置状态栏，true:是，false：否
@@ -64,6 +66,7 @@ public abstract class BaseActivity extends FragmentActivity {
         LogManager.i(TAG, "onCreate");
         AcStackManager.getInstance().pushActivity(this);
         if (isUserDefinedColorForStatusBar) setStatusBarTintResource(R.color.color_theme);
+        else setLopStatBar(R.color.transparent);
 
     }
 
@@ -216,7 +219,7 @@ public abstract class BaseActivity extends FragmentActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = this.getWindow();
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(this.getResources().getColor(color));
             // window.setNavigationBarColor(Color.TRANSPARENT);
@@ -423,7 +426,6 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
 
-
     public void requestNetData(String url, Map<String, String> hasMap, final boolean showDialog, MyConstants.HttpMethod method, final int resquestCode) {
         if (requestList != null) requestList.add(resquestCode);
         if (showDialog) showProgressDialog();
@@ -487,8 +489,6 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
 
-
-
     /**
      * 取消网络请求
      *
@@ -550,6 +550,7 @@ public abstract class BaseActivity extends FragmentActivity {
 
     @Override
     protected void onDestroy() {
+      //  clearAllRequest();
         super.onDestroy();
         LogManager.i(TAG, "onDestroy");
         isRunning = false;
@@ -599,6 +600,62 @@ public abstract class BaseActivity extends FragmentActivity {
             ft.hide(fragment);
             ft.commit();
         }
+    }
+
+
+
+
+
+
+/*----------------------------------网络--------------------------------------------------*/
+
+    protected void getData(String urlStr, int requestCode, HashMap<String, String> map,MyConstants.HttpMethod mHttpMethod,boolean isShow) {
+        if (isShow) showProgressDialog();
+        new OkHttpManager.Builder(urlStr).setResquestCode(requestCode).setResquestParam(map).setHttpMethod(mHttpMethod).Builder(this);
+        if (requestList != null) requestList.add(requestCode);
+    }
+
+
+    @Override
+    public void OnSuccess(int requestCode, JSONObject json) {
+        String jsonStr = "";
+        String resultStr = "";//为空时 code不等于200或者不存在result
+
+        if (json != null) jsonStr = json.toString();
+        LogManager.d(jsonStr);
+        try {
+            JSONObject mJSONObject = new JSONObject(jsonStr);
+            if (mJSONObject.has("code")) {
+                if (StringUtils.isEquals(mJSONObject.getString("code"), "200")) {
+                    onSuccess(requestCode, mJSONObject.getString("result"));
+                } else {
+                    onError(requestCode, mJSONObject.getString("message"));
+                }
+            } else {
+                onError(requestCode, "不存在关键字code");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            onError(requestCode, "json捕获异常");
+        } finally {
+            dismissProgressDialog();
+            if (requestList != null) requestList.remove(requestCode);
+        }
+    }
+
+    @Override
+    public void OnError(int requestCode, String json) {
+        onError(requestCode, json);
+        if (requestList != null) requestList.remove(requestCode);
+        dismissProgressDialog();
+    }
+
+    protected void onSuccess(int requestCode, String json) {
+
+    }
+
+
+    protected void onError(int requestCode, String json) {
     }
 
 

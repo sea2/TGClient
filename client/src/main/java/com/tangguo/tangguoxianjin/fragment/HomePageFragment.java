@@ -67,7 +67,7 @@ public class HomePageFragment extends BaseFragment {
     private TextView tv_item_left_name;
     private LinearLayout llbroad_cast;
     private ImageView tv_home_information;
-    int iconInt = 0;
+    private int iconInt = 0;
     private CustomImageButton btn_add_lines;
     private AnimationNumberView tv_home_lines_money;
     private ImageView tv_broadcast_close;

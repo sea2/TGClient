@@ -24,7 +24,9 @@ import com.tangguo.tangguoxianjin.common.BaseVerifyActivity;
 import com.tangguo.tangguoxianjin.config.MyConstants;
 import com.tangguo.tangguoxianjin.config.UrlConstans;
 import com.tangguo.tangguoxianjin.model.LoginInfo;
+import com.tangguo.tangguoxianjin.net.OkHttpManagerService;
 import com.tangguo.tangguoxianjin.net.ResponseNewListener;
+import com.tangguo.tangguoxianjin.net.mvp.OkHttpPresenterImpl;
 import com.tangguo.tangguoxianjin.util.AccountInfoUtils;
 import com.tangguo.tangguoxianjin.util.KeyBoardUtils;
 import com.tangguo.tangguoxianjin.util.ScreenUtil;
@@ -60,7 +62,8 @@ public class LoginActivity extends BaseVerifyActivity {
     private Button btnforgetpassword;
     private LoginInfo mLoginInfo;
     private String verification_no;
-
+    private OkHttpManagerService mOkHttpManagerService;
+    private  OkHttpPresenterImpl okHttpPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -333,13 +336,13 @@ public class LoginActivity extends BaseVerifyActivity {
 
     /**
      * 检测手机号是注册还是登录
-     *
+     *OkHttp的几种封装形式
      * @param phoneNum
      */
     private void requestNumData(String phoneNum) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("phone", phoneNum);
-        requestNetData(UrlConstans.LOGIN_OPEN, map, true, MyConstants.HttpMethod.HTTP_GET, UrlConstans.LOGIN_OPEN_CODE, new ResponseNewListener() {
+ /*       requestNetData(UrlConstans.LOGIN_OPEN, map, true, MyConstants.HttpMethod.HTTP_GET, UrlConstans.LOGIN_OPEN_CODE, new ResponseNewListener() {
             @Override
             public void OnResponse(String json, boolean successorfail) {
                 if (successorfail && (!StringUtils.isEmpty(json))) {
@@ -357,14 +360,43 @@ public class LoginActivity extends BaseVerifyActivity {
                 }
             }
         });
+*/
+     //  getData(UrlConstans.LOGIN_OPEN, UrlConstans.LOGIN_OPEN_CODE, map, MyConstants.HttpMethod.HTTP_GET, true);
+
+
+    // mOkHttpManagerService=   new OkHttpManagerService(UrlConstans.LOGIN_OPEN, UrlConstans.LOGIN_OPEN_CODE, map, MyConstants.HttpMethod.HTTP_GET, true,this);
+         okHttpPresenter = new OkHttpPresenterImpl(this);
+        okHttpPresenter.login(phoneNum,phoneNum);
+
     }
 
+
+
+
+    @Override
+    protected void onSuccess(int requestCode, String json) {
+        super.onSuccess(requestCode, json);
+        if (!StringUtils.isEmpty(json)) {
+            try {
+                Gson gson = new Gson();
+                mLoginInfo = gson.fromJson(json, new TypeToken<LoginInfo>() {
+                }.getType());
+                if (mLoginInfo != null) {
+                    if (StringUtils.isEquals(mLoginInfo.getStatus(), "0")) selectLoginRegister(true);
+                    else if (StringUtils.isEquals(mLoginInfo.getStatus(), "2")) selectLoginRegister(false);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     private void selectLoginRegister(boolean registerFlog) {
         if (registerFlog) {
             setTitle("注册");
             if (mLoginInfo != null) {
-                tvprotocol.setText(Html.fromHtml(mLoginInfo.getAgreement_title()));
+                if (StringUtils.isNotEmpty(mLoginInfo.getAgreement_title()))
+                    tvprotocol.setText(Html.fromHtml(mLoginInfo.getAgreement_title()));
             }
             ObjectAnimator animator = ObjectAnimator.ofFloat(llinputtwoinfo, "translationX", new ScreenUtil(LoginActivity.this).getWidth(), 0f);
             animator.addListener(new Animator.AnimatorListener() {
@@ -458,7 +490,8 @@ public class LoginActivity extends BaseVerifyActivity {
 
     @Override
     protected void onDestroy() {
-
+       if(okHttpPresenter!=null) okHttpPresenter.onDestroy();
+       if(mOkHttpManagerService!=null) mOkHttpManagerService.cancelRequest();
         super.onDestroy();
     }
 

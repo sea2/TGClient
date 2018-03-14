@@ -15,7 +15,9 @@ public class FileDirectoryUtil {
     private static String myfilepath = "tangguo";
 
     public static File getOwnFileDirectory(Context context, String fileDir) {
+
         File appFileDir = null;
+
         if ("mounted".equals(Environment.getExternalStorageState()) && hasExternalStoragePermission(context)) {
             appFileDir = new File(Environment.getExternalStorageDirectory(), fileDir);
         }
