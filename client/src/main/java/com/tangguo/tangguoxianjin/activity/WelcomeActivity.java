@@ -2,13 +2,16 @@ package com.tangguo.tangguoxianjin.activity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.squareup.leakcanary.RefWatcher;
 import com.tangguo.tangguoxianjin.R;
 import com.tangguo.tangguoxianjin.common.BaseActivity;
+import com.tangguo.tangguoxianjin.common.MyApplication;
 import com.tangguo.tangguoxianjin.config.MyConstants;
 import com.tangguo.tangguoxianjin.util.SharePreferenceUtil;
 import com.tangguo.tangguoxianjin.util.StringUtils;
@@ -41,7 +44,7 @@ public class WelcomeActivity extends BaseActivity {
         this.ivadbg = (ImageView) findViewById(R.id.iv_ad_bg);
 
 
-        ivadbg.setOnClickListener(new View.OnClickListener() {
+        btngetcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 endWelcome();
@@ -52,11 +55,12 @@ public class WelcomeActivity extends BaseActivity {
 
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        System.exit(0);
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.ACTION_DOWN == event.getAction() && KeyEvent.KEYCODE_BACK == keyCode) {
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
-
 
     @Override
     protected void onResume() {
@@ -80,8 +84,8 @@ public class WelcomeActivity extends BaseActivity {
                 @Override
                 public void onCompleted() {
                     Log.d(TAG, "onCompleted: ");
+                     endWelcome();
                     if (subscription != null) subscription.unsubscribe();
-                    endWelcome();
                 }
 
                 @Override
@@ -111,7 +115,6 @@ public class WelcomeActivity extends BaseActivity {
         } else {
             SharePreferenceUtil.getInstance().save(MyConstants.FIRST_START_APP, "0", WelcomeActivity.this);
             startAc(StaticPageGuideActivity.class);
-
             finish();
         }
 
@@ -119,7 +122,11 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
+        if (subscription != null) {
+            subscription.unsubscribe();
+        }
         super.onDestroy();
-        if (subscription != null) subscription.unsubscribe();
+        RefWatcher refWatcher = MyApplication.getRefWatcher(this);
+        refWatcher.watch(this);
     }
 }

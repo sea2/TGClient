@@ -7,7 +7,7 @@ import com.tangguo.tangguoxianjin.config.MyConstants;
 public class LogManager {
 
     public static boolean isLogOpen = (MyConstants.AppRunModel != MyConstants.RunModel.PRO);
-    private static String TAG = "com.tangguo.tangguoxianjin";
+    private static String TAG = "com.tangguo";
     private static String TAG_http = "http_json_out";
 
     public static void i(String msg) {

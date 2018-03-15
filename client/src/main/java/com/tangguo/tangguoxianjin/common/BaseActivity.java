@@ -45,7 +45,7 @@ import java.util.Map;
  */
 
 public abstract class BaseActivity extends FragmentActivity implements OkHttpListener {
-    protected String TAG = "";
+    protected String TAG = this.getClass().getSimpleName();
     private SystemBarTintManager tintManager = null;
     protected boolean isUserDefinedColorForStatusBar = true;//是否采用自定义的颜色设置状态栏，true:是，false：否
     protected boolean isUserDefinedTitle = true;//是否默认标题

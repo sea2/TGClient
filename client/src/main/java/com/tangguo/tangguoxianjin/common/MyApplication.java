@@ -1,6 +1,7 @@
 package com.tangguo.tangguoxianjin.common;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.Handler;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
@@ -10,6 +11,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import com.tangguo.tangguoxianjin.config.MyConstants;
 import com.tangguo.tangguoxianjin.util.CrashHandler;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -28,12 +30,20 @@ public class MyApplication extends Application {
 
     private static MyApplication instance;
 
+    private RefWatcher refWatcher;
+
+    public static RefWatcher getRefWatcher(Context context) {
+        MyApplication application = (MyApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
+
+
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
         if (MyConstants.AppRunModel != MyConstants.RunModel.PRO) {
-            LeakCanary.install(this);
+            refWatcher = LeakCanary.install(this);
             CrashHandler crashHandler = CrashHandler.getInstance();
             crashHandler.init(getApplicationContext());
         }
