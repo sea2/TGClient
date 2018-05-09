@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.tangguo.tangguoxianjin.R;
 import com.tangguo.tangguoxianjin.common.BaseActivity;
@@ -32,7 +32,7 @@ public class BorrowHelpActivity extends BaseActivity {
         float screenWidth = new ScreenUtil(this).getWidth();
         float rale = screenWidth / width;
         float drawableHeigthEnd = rale * height;
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, (int) drawableHeigthEnd);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, (int) drawableHeigthEnd);
         ivphotoborrow.setLayoutParams(params);
         ivphotoborrow.setScaleType(ImageView.ScaleType.FIT_XY);
         ivphotoborrow.setImageBitmap(bitmap);

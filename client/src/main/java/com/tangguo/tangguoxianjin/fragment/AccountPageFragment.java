@@ -233,4 +233,12 @@ public class AccountPageFragment extends BaseFragment implements View.OnClickLis
     public void onUpOrCancelMotionEvent(ScrollState scrollState) {
 
     }
+
+
+    @Override
+    public void onDestroyView() {        //移除当前视图，防止重复加载相同视图使得程序闪退
+        ((ViewGroup) view.getParent()).removeView(view);
+        super.onDestroyView();
+    }
+
 }

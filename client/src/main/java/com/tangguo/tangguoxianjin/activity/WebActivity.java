@@ -28,8 +28,6 @@ import com.tangguo.tangguoxianjin.util.LogManager;
 import com.tangguo.tangguoxianjin.util.StringUtils;
 import com.tangguo.tangguoxianjin.view.TitleLayout;
 
-import static com.tangguo.tangguoxianjin.R.id.wv_load;
-
 public class WebActivity extends BaseActivity {
 
     private String action = "";
@@ -71,17 +69,19 @@ public class WebActivity extends BaseActivity {
     @SuppressLint("SetJavaScriptEnabled")
     private void initViews() {
         networkProgressBar = (ProgressBar) findViewById(R.id.myProgressBar);
-        webView = (WebView) findViewById(wv_load);
+        webView = (WebView) findViewById(R.id.wv_load);
         this.rlwebview = (RelativeLayout) findViewById(R.id.rl_webview);
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAppCacheEnabled(false);
         webView.getSettings().setSupportZoom(true);
         webView.getSettings().setSavePassword(false);
+
         if (android.os.Build.VERSION.SDK_INT >= 11) {
             webView.getSettings().setBuiltInZoomControls(true);
             webView.getSettings().setDisplayZoomControls(false); //隐藏Zoom缩放按钮
         }
+
         //add by xiehy 修复HTML页面加载WEBVIEW 显示问题 不使用加载百分百显示
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setLoadWithOverviewMode(true);
