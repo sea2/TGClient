@@ -7,7 +7,7 @@ import com.tangguo.tangguoxianjin.BuildConfig;
  * Created by Administrator on 2017/3/22.
  */
 
-public class MyConstants {
+public final class MyConstants {
 
 
     /**
@@ -26,7 +26,7 @@ public class MyConstants {
             return "https://app.91xcm.com/v1.0/app/";
         } else if (AppRunModel == RunModel.DEV) {//开发
 //                return "http://192.168.3.171:8060/v1.0/app/";
-               return "http://192.168.2.36:8080/v1.0/app/";
+               return "http://192.168.5.19:8081/app/";
             //    return "http://192.168.3.35:8080/app/";
         }
         return "";

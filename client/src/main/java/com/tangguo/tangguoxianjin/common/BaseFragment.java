@@ -7,9 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.tangguo.tangguoxianjin.config.MyConstants;
 import com.tangguo.tangguoxianjin.net.RequestManager;
@@ -72,11 +69,6 @@ public class BaseFragment extends LazyFragment {
         outState.putBoolean(STATE_SAVE_IS_HIDDEN, isHidden());
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

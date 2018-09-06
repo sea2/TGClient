@@ -26,6 +26,7 @@ public class BorrowHelpActivity extends BaseActivity {
         setTitle("借款攻略");
 
 
+
         bitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.img_borrow_help);
         float height = bitmap.getHeight();
         float width = bitmap.getWidth();
